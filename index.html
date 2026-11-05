@@ -11,7 +11,7 @@
     <h1>Virtual Dog Park</h1>
     <p class="welcome">
       Welcome to the Virtual Dog Park. Read about three friendly breeds below,
-      then adopt one dog and take care of it in the next rounds.
+      then adopt one dog and keep it happy.
     </p>
   </header>
 
@@ -45,6 +45,67 @@
           <p><strong>Personality:</strong> Clever, lively and quick to learn new tricks.</p>
           <p><strong>Care:</strong> Professional grooming every six to eight weeks and daily brushing.</p>
         </article>
+      </div>
+    </section>
+
+    <!-- Round 2: adoption form -->
+    <section class="panel" id="adoption">
+      <h2>My Virtual Dog</h2>
+      <p class="section-note">Choose a breed, give your dog a name, then select Adopt.</p>
+
+      <form id="adopt-form" novalidate>
+        <div class="field">
+          <label for="breed-select">Breed</label>
+          <select id="breed-select" name="breed">
+            <option value="Beagle">Beagle</option>
+            <option value="Golden Retriever">Golden Retriever</option>
+            <option value="Poodle">Poodle</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="dog-name">Dog name (1 to 20 characters)</label>
+          <input
+            id="dog-name"
+            name="dogName"
+            type="text"
+            maxlength="20"
+            placeholder="For example: Buddy"
+            autocomplete="off"
+          />
+        </div>
+
+        <button type="submit" class="button button-primary">Adopt</button>
+        <p id="form-message" class="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Round 2: the adopted dog -->
+    <section class="panel" id="pet" hidden>
+      <h2>Your Dog</h2>
+
+      <div class="pet-card">
+        <img
+          id="pet-image"
+          class="pet-image"
+          src="assets/beagle.svg"
+          alt="Illustration of your adopted dog"
+          width="160"
+          height="160"
+        />
+
+        <dl class="pet-facts">
+          <div class="fact"><dt>Name</dt><dd id="pet-name">-</dd></div>
+          <div class="fact"><dt>Breed</dt><dd id="pet-breed">-</dd></div>
+          <div class="fact"><dt>Day</dt><dd id="pet-day">1</dd></div>
+          <div class="fact"><dt>Stage</dt><dd id="pet-stage">Puppy</dd></div>
+          <div class="fact"><dt>Happiness</dt><dd id="pet-happiness">50</dd></div>
+        </dl>
+      </div>
+
+      <div class="actions">
+        <button id="feed-btn" type="button" class="button">Feed (+10)</button>
+        <button id="play-btn" type="button" class="button">Play (+10)</button>
       </div>
     </section>
   </main>
