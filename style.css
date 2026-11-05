@@ -1,0 +1,134 @@
+/* ---------------------------------------------------------------
+   Shared colours and spacing
+   --------------------------------------------------------------- */
+:root {
+  --ink: #23303b;
+  --ink-soft: #566573;
+  --page: #f4f7fa;
+  --panel: #ffffff;
+  --line: #dce4ec;
+  --accent: #2f6f8f;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 16px 48px;
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--page);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.15rem; }
+
+p {
+  margin: 0 0 10px;
+}
+
+/* ---------------------------------------------------------------
+   Page layout
+   --------------------------------------------------------------- */
+.site-header,
+main,
+.site-footer {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-header {
+  margin-bottom: 24px;
+}
+
+.welcome {
+  max-width: 62ch;
+  color: var(--ink-soft);
+}
+
+.panel {
+  margin-bottom: 22px;
+  padding: 22px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.section-note {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------------------
+   Breed cards
+   --------------------------------------------------------------- */
+.breed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.breed-card {
+  padding: 16px;
+  background: #fbfdff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.breed-card img {
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+}
+
+.breed-card p {
+  margin-bottom: 6px;
+  font-size: 0.96rem;
+}
+
+.breed-card strong {
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------------
+   Footer
+   --------------------------------------------------------------- */
+.site-footer {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------
+   Narrow screens (phone): one card per row, no sideways scrolling
+   --------------------------------------------------------------- */
+@media (max-width: 600px) {
+  body {
+    padding: 16px 12px 36px;
+    font-size: 16px;
+  }
+
+  h1 { font-size: 1.6rem; }
+
+  .panel { padding: 18px 14px; }
+
+  .breed-grid { grid-template-columns: 1fr; }
+}
