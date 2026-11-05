@@ -11,7 +11,8 @@
     <h1>Virtual Dog Park</h1>
     <p class="welcome">
       Welcome to the Virtual Dog Park. Read about three friendly breeds below,
-      then adopt one dog and keep it happy.
+      then adopt one dog, keep it happy and watch it grow. Your dog is saved in
+      this browser, so it is still here after a refresh.
     </p>
   </header>
 
@@ -80,7 +81,7 @@
       </form>
     </section>
 
-    <!-- Round 2: the adopted dog -->
+    <!-- Round 2 and 3: the adopted dog -->
     <section class="panel" id="pet" hidden>
       <h2>Your Dog</h2>
 
@@ -103,9 +104,27 @@
         </dl>
       </div>
 
+      <!-- Round 3: a growth bar, with the stage also written in words above -->
+      <div class="growth">
+        <span class="growth-label">Growth bar</span>
+        <div
+          id="growth-track"
+          class="growth-track"
+          role="progressbar"
+          aria-label="Growth progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <div id="growth-fill" class="growth-fill"></div>
+        </div>
+      </div>
+
       <div class="actions">
         <button id="feed-btn" type="button" class="button">Feed (+10)</button>
         <button id="play-btn" type="button" class="button">Play (+10)</button>
+        <button id="next-day-btn" type="button" class="button">Next Day</button>
+        <button id="start-over-btn" type="button" class="button button-danger">Start Over</button>
       </div>
     </section>
   </main>

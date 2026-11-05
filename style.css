@@ -9,6 +9,7 @@
   --line: #dce4ec;
   --accent: #2f6f8f;
   --accent-dark: #245a75;
+  --danger: #9c4038;
   --radius: 14px;
 }
 
@@ -167,6 +168,16 @@ main,
   background: var(--accent-dark);
 }
 
+.button-danger {
+  color: var(--danger);
+  background: #f8eceb;
+  border-color: #e0c2bf;
+}
+
+.button-danger:hover {
+  background: #f3dedc;
+}
+
 .message {
   min-height: 1.4em;
   margin: 10px 0 0;
@@ -219,11 +230,51 @@ main,
   font-weight: 600;
 }
 
+/* ---------------------------------------------------------------
+   Growth bar: three clearly different widths and shades
+   --------------------------------------------------------------- */
+.growth {
+  margin-top: 20px;
+}
+
+.growth-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.growth-track {
+  height: 14px;
+  max-width: 420px;
+  overflow: hidden;
+  background: #e6eef4;
+  border-radius: 999px;
+}
+
+.growth-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: #9fc3d6;
+  transition: width 0.25s ease;
+}
+
+.growth-fill[data-stage="Young Dog"] {
+  background: #5d97b6;
+}
+
+.growth-fill[data-stage="Adult Dog"] {
+  background: var(--accent);
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 /* ---------------------------------------------------------------
